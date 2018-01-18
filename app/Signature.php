@@ -7,9 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Signature extends Model
 {
     /**
+     * @var array $fillable Fields to be mass-assigned.
+     */
+    protected $fillable = ['name', 'email', 'body', 'flagged_at'];
+
+    /**
      * Ignore flagged signatures.
      *
      * @param $query
+     *
      * @return mixed
      */
     public function scopeIgnoreFlagged($query)
